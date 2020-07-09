@@ -26,19 +26,25 @@
 // // document.getElementsByClassName('novotodo').onClick = function() {
 // //     MinhaLista.add('Nova todo')
 // // }
-var arr = [1, 3, 4, 5, 7, 8, 11];
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(newArr);
-var sum = arr.reduce(function (tatal, next) {
-  return total + next;
-});
-console.log(sum);
-var filtro = arr.filter(function (item) {
-  return item % 2 === 0;
-});
-console.log(filtro);
-var find = arr.find(function (item) {
-  return item === 4;
-});
+// const arr =[1, 3, 4, 5, 7, 8, 11]
+// const newArr = arr.map(item => item * 2)
+// console.log(newArr)
+// const sum = arr.reduce((tatal, next) => total+next)
+// console.log(sum)
+// const filtro = arr.filter(item => item % 2 === 0)
+// console.log(filtro)
+// const find = arr.find((item) => item === 4)
+var usuario = {
+  nome: 'Luiz',
+  idade: '31',
+  endereco: {
+    cidade: 'Tupa',
+    estado: 'SP'
+  }
+};
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);

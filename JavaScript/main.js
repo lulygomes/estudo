@@ -31,18 +31,33 @@
 // //     MinhaLista.add('Nova todo')
 // // }
 
-const arr =[1, 3, 4, 5, 7, 8, 11]
+// const arr =[1, 3, 4, 5, 7, 8, 11]
 
-const newArr = arr.map((item) => item * 2)
+// const newArr = arr.map(item => item * 2)
 
-console.log(newArr)
+// console.log(newArr)
 
-const sum = arr.reduce((tatal, next) => total+next)
+// const sum = arr.reduce((tatal, next) => total+next)
 
-console.log(sum)
+// console.log(sum)
 
-const filtro = arr.filter((item) => item % 2 === 0)
+// const filtro = arr.filter(item => item % 2 === 0)
 
-console.log(filtro)
+// console.log(filtro)
 
-const find = arr.find((item) => item === 4)
+// const find = arr.find((item) => item === 4)
+
+const usuario = {
+    nome: 'Luiz',
+    idade: '31',
+    endereco: {
+        cidade: 'Tupa',
+        estado: 'SP'
+    }
+}
+
+const {nome, idade, endereco:{ cidade }} = usuario
+
+console.log(nome)
+console.log(idade)
+console.log(cidade)
