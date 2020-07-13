@@ -32,5 +32,20 @@ module.exports = {
         const excluidos = usuarios.splice(i, 1)
         return excluidos ? excluidos[0] : null
 
+    },
+
+    alterarUsuario(_, args) {
+        const i = usuarios.findIndex(u => u.id === args.id)
+        if(i < 0) return null
+
+        // o objetos usuario vai receber todos os argumentos de usuario no indice [i]
+        // e o que conflitar com o usuário args vai ser substituido 
+        const usuario ={
+            ...usuarios[i],
+            ...args
+        }
+
+        usuarios.splice(i, 1, usuario)
+        return usuario
     }
 }
