@@ -53,18 +53,25 @@ module.exports = {
 
     }, */
 
-    alterarUsuario(_, args) {
-        const i = usuarios.findIndex(u => u.id === args.id)
+    alterarUsuario(_, { filtro, dados}) {
+        const i = indiceUsuario(filtro)
+        // const i = usuarios.findIndex(u => u.id === args.id)
         if(i < 0) return null
+
+        usuarios[i].nome = dados.nome
+        usuarios[i].email = dados.email
+        if(dados.idade) {
+            usuarios[i].idade = dados.idade
+        }
 
         // o objetos usuário vai receber todos os argumentos de usuário no indice [i]
         // e o que conflitar com o usuário args vai ser substituido 
-        const usuario ={
-            ...usuarios[i],
-            ...args
-        }
+        // const usuario ={
+        //     ...usuarios[i],
+        //     ...args
+        // }
 
-        usuarios.splice(i, 1, usuario)
-        return usuario
+        // usuarios.splice(i, 1, usuario)
+        return usuarios[i]
     }
 }
